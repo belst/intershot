@@ -1,0 +1,3 @@
+build/*
+!build/.gitkeep
+CMakeLists.txt.user
