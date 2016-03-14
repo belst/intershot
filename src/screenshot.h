@@ -33,6 +33,8 @@ private:
     QString filename;
     void saveAndClose();
     void parseString(QString&);
+    void slop();
+    bool use_slop = true;
 
 protected:
     void mousePressEvent(QMouseEvent* event);
