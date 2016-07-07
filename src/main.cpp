@@ -22,9 +22,7 @@ int main(int argc, char** argv) {
     const QStringList args = parser->positionalArguments();
     char mbstr[100];
     std::time_t t = std::time(NULL);
-    struct tm* tm;
-    tm = localtime(&t);
-
+    struct tm* tm = localtime(&t);
 
     QString filename = "";
     if(args.isEmpty()) {
