@@ -11,15 +11,14 @@ Screenshot::Screenshot(QCommandLineParser* parser,
                        QWidget *parent)
     : QLabel(parent), parser(parser), filename(filename)
 {
-    connect(this, SIGNAL(mousePress(QMouseEvent*)), this, SLOT(mouseDown(QMouseEvent*)));
-    connect(this, SIGNAL(mouseRelease(QMouseEvent*)), this, SLOT(mouseUp(QMouseEvent*)));
+    connect(this, SIGNAL(mousePressEvent(QMouseEvent*)), this, SLOT(mouseDown(QMouseEvent*)));
+    connect(this, SIGNAL(mouseReleaseEvent(QMouseEvent*)), this, SLOT(mouseUp(QMouseEvent*)));
 
     shootScreen();
 }
 
 
 void Screenshot::shootScreen() {
-
     QScreen *screen = QGuiApplication::primaryScreen();
 
     if(screen)
@@ -63,14 +62,3 @@ void Screenshot::saveAndClose() {
     }
     exit(retCode);
 }
-
-void Screenshot::mousePressEvent(QMouseEvent *event)
-{
-    emit mousePress(event);
-}
-
-void Screenshot::mouseReleaseEvent(QMouseEvent *event)
-{
-    emit mouseRelease(event);
-}
-

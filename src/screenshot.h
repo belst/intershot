@@ -34,10 +34,6 @@ private:
     void saveAndClose();
     void parseString(QString&);
 
-protected:
-    void mousePressEvent(QMouseEvent* event);
-    void mouseReleaseEvent(QMouseEvent *ev);
-
 };
 
 #endif // SCREENSHOT_H

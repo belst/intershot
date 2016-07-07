@@ -14,7 +14,7 @@ int main(int argc, char** argv) {
     parser->addPositionalArgument("file", "Save Location (can use strftime args)");
     QCommandLineOption selectOption({"s", "select"}, "Select an area on the screen");
     parser->addOption(selectOption);
-    QCommandLineOption execOption({"e", "exec"}, "Execute command on the created file", "execstring");
+    QCommandLineOption execOption({"e", "exec"}, "Execute command on the created file (use $f as filename)", "execstring");
     parser->addOption(execOption);
 
     parser->process(app);
